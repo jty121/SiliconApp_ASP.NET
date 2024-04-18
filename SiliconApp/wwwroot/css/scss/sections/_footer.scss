@@ -1,0 +1,15 @@
+footer{
+    padding-top: 2rem;
+    
+    .container{
+        text-align: center;
+
+        .socialmedia{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}

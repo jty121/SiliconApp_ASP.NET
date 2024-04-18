@@ -1,0 +1,39 @@
+.appdownload {
+    background: var(--color-gray-100);
+
+    .container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        width: 100%;
+
+        @include md {
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+        }
+
+        @include xl {
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 0 5rem;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .appstores {
+            padding: 2rem;
+        }
+    }
+}

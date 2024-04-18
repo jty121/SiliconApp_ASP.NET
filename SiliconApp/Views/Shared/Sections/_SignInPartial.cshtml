@@ -1,0 +1,52 @@
+﻿@model SignInViewModel
+
+@{
+    ViewData["Title"] = "Sign in";
+}
+<section id="signin">
+    <div class="container">
+        <form method="post" asp-controller="Authentication" asp-action="SignIn" asp-route-ReturnUrl="@ViewData["ReturnUrl"]" novalidate>
+
+            @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+            {
+                <div class="input-error">
+                    @ViewData["ErrorMessage"]
+                </div>
+            }
+
+            <h1>Welcome Back</h1>
+            <p>Don´t have an account yet? <a asp-controller="Authentication" asp-action="SignUp">Sign up here.</a></p>
+
+            <div class="content">
+                <div id="form-email" class="input-group">
+                    <label asp-for="Email"></label>
+                    <span asp-validation-for="Email"></span>
+                    <input asp-for="Email" />
+                </div>
+                <div id="form-password" class="input-group">
+                    <label asp-for="Password"></label>
+                    <span asp-validation-for="Password"></span>
+                    <input asp-for="Password" />
+                </div>
+                <div id="form-remember" class="checkbox">
+                    <div class="checkbox-group">
+                        <input asp-for="RememberMe" />
+                        <label asp-for="RememberMe"></label>
+                    </div>
+                </div>
+                <button id="form-button" class="btn-theme" type="submit">Sign in</button>
+                <a id="form-forgot" asp-controller="Account" asp-action="SignUp">Forgot your password? </a>
+
+                <div class="external">
+                    <h6>Or sign in with your social account</h6>
+                    <div class="option">
+                        <a class="btn-gray" asp-action="Facebook" asp-controller="Authentication"><i class="fa-brands fa-facebook"></i>Facebook</a>
+                        <a class="btn-gray" asp-action="Google" asp-controller="Authentication"><i class="fa-brands fa-google"></i>Google</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+@await Html.PartialAsync("_ValidationScriptPartial")
+

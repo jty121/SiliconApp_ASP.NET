@@ -1,0 +1,28 @@
+.getstarted {
+    padding: 3rem 3rem;
+
+    .container {
+        background: var(--color-gray-100);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 3rem 4rem;
+
+        .content {
+            width: 40%;
+
+            p {
+                @include text-wide;
+            }
+
+            span {
+                color: var(--color-theme);
+            }
+
+            button {
+                @include theme-shadow;
+                margin-top: 2rem;
+            }
+        }
+    }
+}

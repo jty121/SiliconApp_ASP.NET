@@ -1,0 +1,73 @@
+﻿@model SubscriberViewModel
+
+<section class="newsletter">
+    <div class="container">
+        <div class="content">
+            <div class="heading">
+                <h1>Don't Want to Miss Anything?</h1>
+                <img src="~/images/image/arrows.svg" alt="purple spinning arrow">
+            </div>
+            <form id="subscribe" method="post" asp-action="Subscribe" asp-controller="Home">
+                <div class="optionboxes">
+                    <h5 class="headline">Sign up for Newsletters</h5>
+                    <div class="option">
+                        <input type="checkbox" asp-for="@Model.DailyNewsletter">
+                        <label for="newsletter">Daily Newsletter</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" asp-for="@Model.AdvertisingUpdates">
+                        <label for="advertising">Advertising Updates</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" asp-for="@Model.WeekinReview">
+                        <label for="review">Week in Review</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" asp-for="@Model.EventUpdates">
+                        <label for="event">Event Updates</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" asp-for="@Model.StartupsWeekly">
+                        <label for="Startups">Startups Weekly</label>
+                    </div>
+                    <div class="option">
+                        <input type="checkbox" asp-for="@Model.Podcasts">
+                        <label for="podcasts">Podcasts</label>
+                    </div>
+                </div>
+                <div class="input-subscribe">
+                    <input class="email" asp-for="@Model.Email">
+                    <button class="btn-theme" type="submit">Subscribe *</button>
+                </div>
+            </form>
+            <p>* Yes, I agree to the <a class="terms" href="#">terms</a> and <a class="policy" href="#">privacy policy.</a></p>
+        </div>
+        <div class="information">
+            @if (ViewData["Status"]?.ToString() == "Subscribed")
+            {
+                <span class="alert alert-success">
+                    <p>You have been subscribed</p>
+                </span>
+            }
+            @if (ViewData["Status"]?.ToString() == "AlreadyExists")
+            {
+                <span class="alert alert-alreadyexists">
+                    <p>You already have an subscription</p>
+                </span>
+            }
+            @if (ViewData["Status"]?.ToString() == "ConnectionFailed")
+            {
+                <span class="alert alert-connectionfailed">
+                    <p>Unable to connect to the database</p>
+                </span>
+            }
+            @if (ViewData["Status"]?.ToString() == "Invalid")
+            {
+                <span class="alert alert-invalid">
+                    <p>Something went wrong, make sure you entered a valid email address</p>
+                </span>
+            }
+        </div>
+    </div>
+</section>
+@await Html.PartialAsync("_ValidationScriptPartial")

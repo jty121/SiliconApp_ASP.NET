@@ -1,0 +1,249 @@
+.saved-courses {
+    .container {
+        padding-bottom: 5rem;
+
+        .aside {
+            border-bottom: 1px solid var(--color-gray-300);
+            display: grid;
+            padding: 2rem;
+
+            @include md {
+                padding: 0.5rem;
+                border-bottom: 1px solid var(--color-gray-300);
+            }
+
+            @include lg {
+                float: left;
+                border: none;
+                padding-right: 1rem;
+                padding-top: 2rem;
+                width: 25%;
+            }
+
+            .profile {
+                text-align: center;
+
+                p {
+                    color: var(--color-gray-700);
+                    margin-bottom: 2rem;
+                }
+
+                .sidebar {
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+
+                    @include md {
+                        text-align: start;
+                    }
+
+                    .btn-theme {
+                        justify-content: start;
+                        font-size: 1rem;
+                        @include theme-shadow;
+
+                        span {
+                            margin-left: 8px;
+                        }
+                    }
+
+                    .btn-transparent {
+                        justify-content: start;
+
+                        i {
+                            width: 5%;
+                            color: var(--color-gray-600);
+                        }
+                    }
+                }
+            }
+        }
+
+        .items-saved {
+            padding-top: 2rem;
+
+            @include md {
+                padding-top: 3rem;
+            }
+
+
+            @include lg {
+                border-left: 1px solid var(--color-gray-300);
+                margin-left: 25%;
+                padding-top: 3rem;
+            }
+
+            .menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+
+                @include md {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                @include lg {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-left: 6rem;
+                }
+
+                .btn-delete {
+                    background: var(--color-transparent);
+                    color: var(--color-danger);
+                    border: 1px solid #F08784;
+                }
+            }
+
+            .content-box {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding-top: 1.5rem;
+
+
+                @include md {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                    padding-top: 1.5rem;
+                }
+
+                @include lg {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.5rem;
+                    padding-top: 1.5rem;
+                    padding-left: 6rem;
+                }
+
+                .display-course {
+                    position: relative;
+                    text-decoration: none;
+                    border-radius: 0.5rem;
+                    overflow: hidden;
+
+                    .course-img {
+                        width: 100%;
+                    }
+
+                    &:hover {
+                        @include shadow-l;
+
+                        h5 {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .badge {
+                        position: relative;
+                        height: 2.2rem;
+                        width: 2.2rem;
+                        left: 28rem;
+                        bottom: 17rem;
+                        background: white;
+                        border-radius: 45px;
+
+                        @include md {
+                            position: relative;
+                            height: 2.2rem;
+                            width: 2.2rem;
+                            left: 18rem;
+                            bottom: 11rem;
+                            background: white;
+                            border-radius: 45px;
+                        }
+
+                        @include lg {
+                            position: relative;
+                            height: 2.2rem;
+                            width: 2.2rem;
+                            left: 15rem;
+                            bottom: 10rem;
+                            background: white;
+                            border-radius: 45px;
+                        }
+
+                        @include xl {
+                            position: relative;
+                            height: 2.2rem;
+                            width: 2.2rem;
+                            left: 19rem;
+                            bottom: 12rem;
+                            background: white;
+                            border-radius: 45px;
+                        }
+
+                        @include xxl {
+                            position: relative;
+                            height: 2.2rem;
+                            width: 2.2rem;
+                            left: 23rem;
+                            bottom: 14rem;
+                            background: white;
+                            border-radius: 45px;
+                        }
+
+                        &:hover {
+                            @include theme-secondary-shadow;
+                            transition: ease-in-out 0.7s;
+                        }
+
+                        button {
+                            position: absolute;
+                            top: 9px;
+                            left: 5.5px;
+                            background-color: transparent;
+                            border: none;
+
+                            i {
+                                color: var(--color-gray-800);
+                                font-size: 1rem;
+
+                                &:hover {
+                                    color: var(--color-theme);
+                                }
+                            }
+                        }
+                    }
+
+                    .display-info {
+                        @include theme-secondary-shadow;
+                        padding: 20px;
+
+                        hr {
+                            color: var(--color-gray-400);
+                        }
+
+                        p {
+                            @include text-s;
+                            color: var(--color-gray-700);
+                        }
+
+                        span {
+                            @include text-lg;
+                            font-weight: 700;
+                            color: var(--color-theme);
+                        }
+
+                        .timeline-info {
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            gap: 1rem;
+                            color: var(--color-gray-600);
+
+                            p {
+                                margin: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

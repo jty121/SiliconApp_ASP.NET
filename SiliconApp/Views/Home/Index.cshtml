@@ -1,0 +1,18 @@
+﻿@* <partial name="~/Views/Shared/Sections/_ShowcasePartial.cshtml" />
+    här är ett sätt att hämta in olika delar. kan bli problem om vi ska skicka med en modell(dto)
+    här ska alla dina partials ligga med html kod som du sen hämtar in till din home sida.
+*@
+
+<div id="showcase">
+    @await Html.PartialAsync("~/Views/Shared/Sections/_ShowcasePartial.cshtml")
+</div>
+
+<div id="features">
+    @await Html.PartialAsync("~/Views/Shared/Sections/_FeaturesPartial.cshtml")
+</div>
+@await Html.PartialAsync("~/Views/Shared/Sections/_SwitchmodePartial.cshtml");
+@await Html.PartialAsync("~/Views/Shared/Sections/_ManageworkPartial.cshtml");
+@await Html.PartialAsync("~/Views/Shared/Sections/_AppdownloadPartial.cshtml");
+@await Html.PartialAsync("~/Views/Shared/Sections/_IntegratePartial.cshtml");
+@await Html.PartialAsync("~/Views/Shared/Sections/_NewsletterPartial.cshtml");
+

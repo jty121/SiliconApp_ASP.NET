@@ -1,0 +1,92 @@
+#signin {
+    height: 100%;
+    padding: 3rem;
+
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        @include md {
+            width: 60%;
+        }
+
+        @include lg {
+            width: 50%;
+        }
+
+        @include xl {
+            width: 40%;
+        }
+
+        form {
+            padding: 1rem;
+
+            .input-error {
+                display: flex;
+                justify-content: center;
+                border: 1px solid red;
+                border-radius: 8px;
+                background: #F5d7da;
+                padding: 0.5rem;
+                color: var(--color-danger);
+            }
+
+            a {
+                text-decoration: underline;
+            }
+
+            .content {
+                display: grid;
+                gap: 1rem 2rem;
+                grid-template-columns: 1fr;
+                grid-template-areas: "email" "password" "remember" "button" "forgot" "external";
+
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-password {
+                    grid-area: password;
+                }
+
+                #form-remember {
+                    grid-area: remember;
+                }
+
+                #form-button {
+                    grid-area: button;
+                    @include theme-shadow;
+                }
+
+                #form-forgot {
+                    grid-area: forgot;
+                    text-align: center;
+                }
+
+                .external {
+                    grid-area: external;
+
+                    h6 {
+                        justify-content: center;
+                        text-align: center;
+                    }
+
+                    .option {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-top: 1rem;
+
+                        .btn-gray {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

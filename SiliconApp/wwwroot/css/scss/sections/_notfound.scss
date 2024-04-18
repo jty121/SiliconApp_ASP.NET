@@ -1,0 +1,23 @@
+.notfound{
+
+    .container{
+        
+        .content{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            img{
+                max-width: 100%;
+               margin-top: 7rem;
+            }
+
+            .btn-theme{
+                @include theme-shadow;
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+.managework {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .content {
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+
+            @include md {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                padding: 4rem 0 4rem;
+            }
+
+            @include lg {
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+                align-items: center;
+                gap: 4rem;
+                padding: 5rem 0 5rem;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            h2 {
+                text-align: center;
+                margin-bottom: 1rem;
+
+                @include lg {
+                    text-align: start;
+                }
+            }
+
+            a {
+                margin-top: 2rem;
+                display: inline-block;
+            }
+
+            .listcheck {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                text-align: center;
+                padding: 1rem 0 0 0;
+
+                p {
+                    margin: 0;
+                }
+
+                i {
+                    margin-right: 20px;
+                }
+            }
+
+            .btn-theme {
+                display: flex;
+
+                i {
+                    margin-left: 10px;
+                }
+
+                @include lg {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

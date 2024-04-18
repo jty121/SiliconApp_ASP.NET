@@ -1,0 +1,128 @@
+.courses {
+
+    .container {
+
+        .content-box {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding-top: 1.5rem;
+
+
+            @include md {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                padding-top: 1.5rem;
+            }
+
+            @include lg {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1.5rem;
+                padding-top: 1.5rem;
+            }
+
+            .display-course {
+                position: relative;
+                text-decoration: none;
+                border-radius: 1rem;
+                overflow: hidden;
+
+                .course-img {
+                    width: 100%;
+                }
+
+                &:hover {
+                    @include shadow-l;
+
+                    h5 {
+                        text-decoration: underline;
+                    }
+                }
+
+                .badge {
+                    display: flex;
+                    justify-content: space-between;
+
+                    p {
+                        position: absolute;
+                        top: 20px;
+                        left: 12px;
+                        @include text-s;
+                        color: white;
+                        background-color: var(--color-success);
+                        padding: 2px 6px;
+                        border-radius: 8px;
+                    }
+
+                    img {
+                        position: absolute;
+                        top: 20px;
+                        right: 12px;
+                        background: white;
+                        color: var(--color-gray-800);
+                        border-radius: 45px;
+                    }
+                }
+
+                .display-info {
+                    @include theme-secondary-shadow;
+                    padding: 20px;
+                    border-radius: 1rem;
+
+                    hr {
+                        color: var(--color-gray-400);
+                    }
+
+                    p {
+                        @include text-s;
+                        color: var(--color-gray-700);
+                    }
+
+                    span {
+                        @include text-lg;
+                        font-weight: bold;
+                        color: var(--color-theme);
+                    }
+
+                    .timeline-info {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 1rem;
+
+                        p {
+                            margin: 0px;
+                        }
+                    }
+                }
+            }
+        }
+
+        nav {
+            .pagination {
+                display: flex;
+                justify-content: center;
+                margin-top: 2rem;
+
+                .page-link {
+                    text-decoration: none;
+                    border: none;
+                    border-radius: 8px;
+                    color: var(--color-gray-800);
+
+                    &:hover {
+                        @include theme-shadow;
+                        background-color: var(--color-theme);
+                        color: white;
+                    }
+                }
+
+                .page-link:focus {
+                    box-shadow: none; //överskriv bootstraps pagination styling, tar bort den ljusblåa skuggningen runt om
+                }
+            }
+        }
+    }
+}

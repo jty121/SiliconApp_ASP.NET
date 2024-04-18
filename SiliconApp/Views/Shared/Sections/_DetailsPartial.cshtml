@@ -1,0 +1,125 @@
+﻿@inject UserManager<UserEntity> UserManager 
+@{
+    var user = await UserManager.GetUserAsync(User);
+}
+
+@model AccountDetailsViewModel
+@{
+    ViewData["Title"] = $"{Model.ProfileInfo!.FirstName} {Model.ProfileInfo.LastName}";
+}
+
+<section class="account-details">
+    <div class="container">
+        <div class="aside">
+            <div class="profile">
+                <img src="~/images/uploads/@user!.ProfileImageUrl" alt="@user.FirstName @user.LastName">
+                
+                <form enctype="multipart/form-data" method="post" asp-action="UploadImage" asp-controller="Account">
+                    <input id="fileUploader" type="file" name="file" hidden/>
+                    <label for="fileUploader" class="btn-transparent"><i class="fa-regular fa-refresh"></i></label>
+                </form>
+
+                <h5>@Model.ProfileInfo.FirstName @Model.ProfileInfo.LastName</h5>
+                <p>@Model.ProfileInfo.Email</p>
+                <div class="sidebar">
+                    <a class="btn-theme" asp-controller="Account" asp-action="Details"><i class="fa-regular fa-gear"></i><span>Account Details</span></a>
+                    <a class="btn-transparent" asp-controller="Authentication" asp-action="Security"><i class="fa-regular fa-lock"></i><span>Security</span></a>
+                    <a class="btn-transparent" asp-controller="Courses" asp-action="SavedCourses"><i class="fa-regular fa-bookmark"></i><span>Saved Courses</span></a>
+                    <a class="btn-transparent" asp-controller="Authentication" asp-action="SignOut"><i class="fa-regular fa-arrow-right-from-bracket"></i><span>Sign Out</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="account-forms">
+            <form method="post" asp-controller="Account" asp-action="Details" novalidate>
+                <h2>Account Details</h2>
+                <h5>Basic Info</h5>
+
+                <div class="account-profileinfo">
+                    <div id="form-firstname" class="input-group">
+                        <label asp-for="BasicInfo!.FirstName"></label>
+
+                        @if (Model.ProfileInfo.IsExternalAccount)
+                        {
+                            <input asp-for="BasicInfo!.FirstName" disabled>
+                        }
+                        else
+                        {
+                            <input asp-for="BasicInfo!.FirstName">
+                            <span asp-validation-for="BasicInfo!.FirstName"></span>
+                        }
+                    </div>
+                    <div id="form-lastname" class="input-group">
+                        <label asp-for="BasicInfo!.LastName"></label>
+
+                        @if (Model.ProfileInfo.IsExternalAccount)
+                        {
+                            <input asp-for="BasicInfo!.LastName" disabled>
+                        }
+                        else
+                        {
+                            <span asp-validation-for="BasicInfo!.LastName"></span>
+                            <input asp-for="BasicInfo!.LastName">
+                        }
+                    </div>
+                    <div id="form-email" class="input-group">
+                        <label asp-for="BasicInfo!.Email"></label>
+
+                        @if (Model.ProfileInfo.IsExternalAccount)
+                        {
+                            <input asp-for="BasicInfo!.Email" disabled>
+                        }
+                        else
+                        {
+                            <span asp-validation-for="BasicInfo!.Email"></span>
+                            <input asp-for="BasicInfo!.Email">
+                        }
+                    </div>
+                    <div id="form-phone" class="input-group">
+                        <label asp-for="BasicInfo!.Phone"></label>
+                        <span asp-validation-for="BasicInfo!.Phone"></span>
+                        <input asp-for="BasicInfo!.Phone">
+                    </div>
+                    <div id="form-bio" class="input-group">
+                        <label asp-for="BasicInfo!.Biography">Bio <span>(optional)</span></label>
+                        <textarea class="bio" asp-for="BasicInfo!.Biography" rows="4" cols="50"></textarea>
+                    </div>
+                    <div class="menu-buttons">
+                        <button id="form-btn-gray" class="btn-gray"><span>Cancel</span></button>
+                        <button id="form-btn-theme" class="btn-theme" type="submit"><span>Save changes</span></button>
+                    </div>
+                </div>
+            </form>
+            <form method="post" asp-controller="Account" asp-action="Details" novalidate>
+                <hr>
+                <h5>Address</h5>
+                <div class="account-address">
+                    <div id="form-addressline-1" class="input-group">
+                        <label asp-for="AddressInfo!.StreetName">Address line 1</label>
+                        <span asp-validation-for="AddressInfo!.StreetName"></span>
+                        <input asp-for="AddressInfo!.StreetName">
+                    </div>
+                    <div id="form-addressline-2" class="input-group">
+                        <label asp-for="AddressInfo!.SecondStreetName">Address line 2</label>
+                        <span asp-validation-for="AddressInfo!.SecondStreetName"></span>
+                        <input asp-for="AddressInfo!.SecondStreetName">
+                    </div>
+                    <div id="form-postalcode" class="input-group">
+                        <label asp-for="AddressInfo!.PostalCode">Postalcode</label>
+                        <span asp-validation-for="AddressInfo!.PostalCode"></span>
+                        <input asp-for="AddressInfo!.PostalCode">
+                    </div>
+                    <div id="form-city" class="input-group">
+                        <label asp-for="AddressInfo!.City">City</label>
+                        <span asp-validation-for="AddressInfo!.City"></span>
+                        <input asp-for="AddressInfo!.City">
+                    </div>
+                    <div class="menu-buttons">
+                        <button id="form-btn-gray" class="btn-gray"><span>Cancel</span></button>
+                        <button id="form-btn-theme" class="btn-theme" type="submit"><span>Save changes</span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+

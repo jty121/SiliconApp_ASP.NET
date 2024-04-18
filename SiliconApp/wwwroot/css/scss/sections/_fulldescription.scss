@@ -1,0 +1,235 @@
+.full-description {
+    .header-img {
+        height: 100%;
+        width: 100%;
+
+        @include md {
+            width: 100vw;
+        }
+    }
+
+    .container {
+
+        .content {
+
+
+            @include lg {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .course-description {
+                padding-top: 4rem;
+                width: 100%;
+
+
+
+                @include lg {
+                    padding-top: 4rem;
+                    width: 60%;
+                }
+            }
+
+            .learnings {
+                margin-top: 3rem;
+
+                h3 {
+                    display: flex;
+                    margin-bottom: 2rem;
+                }
+
+                .listcheck {
+                    display: flex;
+                    gap: 0.5rem;
+
+                    i {
+                        color: var(--color-theme);
+                    }
+                }
+            }
+
+            .includes {
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                margin-top: 3rem;
+
+                .box {
+                    border: 0.5px solid var(--color-gray-200);
+                    @include theme-secondary-shadow;
+                    padding: 3rem;
+
+                    .price {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        margin-top: 2rem;
+
+                        h5 {
+                            font-weight: 400;
+                            color: #9397AD;
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+            }
+        }
+
+        .details {
+            padding-top: 4rem;
+
+
+            .linear {
+                position: relative;
+
+                ::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 39px;
+                    width: 2px;
+                    height: 90%;
+                    background-color: var(--color-gray-200);
+                    z-index: -1;
+                }
+            }
+
+
+
+
+            @include md {
+                width: 80%;
+            }
+
+            @include lg {
+                width: 60%;
+            }
+
+            .content {
+                display: flex;
+                justify-content: start;
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+        }
+
+        .learn-from {
+            position: relative;
+            margin-bottom: 2rem;
+            margin-top: 6rem;
+            margin-top: 3rem;
+
+            .img {
+                width: 100%;
+                height: 568px;
+
+                .pattern {
+                    display: none;
+
+                    @include md {
+                        display: block;
+                        float: left;
+                        background: var(--color-gray-900);
+                        width: 50%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .profile {
+
+                    @include md {
+                        float: left;
+                        width: 50%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+
+
+            .info {
+                display: grid;
+                text-align: center;
+
+                @include md {
+                    position: absolute;
+                    text-align: start;
+                    top: 0;
+                    right: 0;
+                    width: 50%;
+                    padding: 2rem;
+                }
+
+                span {
+                    @include md {
+                        color: white;
+                        opacity: 0.6;
+                    }
+                }
+
+                h1 {
+
+                    @include md {
+                        color: white;
+                    }
+
+                    @include lg {
+                        padding: 0.5rem 0 2rem 0;
+                    }
+                }
+
+                p {
+
+                    @include md {
+                        color: white;
+                        opacity: 0.6;
+                        font-size: small;
+                    }
+
+                    @include lg {
+                        font-size: medium;
+                    }
+                }
+
+                .buttons {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 1rem;
+                    gap: 1rem;
+
+                    @include md {
+                        display: grid;
+                        justify-content: start;
+                        gap: 1rem;
+                    }
+
+                    @include lg {
+                        display: flex;
+                        padding-top: 3rem;
+                        gap: 1rem;
+                    }
+
+                    .btn-youtube {
+                        color: white;
+                        background: var(--color-danger);
+                        border-radius: 6px;
+                        text-align: start;
+                        font-size: 14px;
+                        padding: 8px 28px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 12px;
+                        border: none;
+
+                        &:hover {
+                            background: var(--color-gray-700);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

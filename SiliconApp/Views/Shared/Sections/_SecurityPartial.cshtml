@@ -1,0 +1,59 @@
+﻿<section class="account-details">
+    <div class="container">
+        <div class="aside">
+            <div class="profile">
+                <img src="~/images/image/profileimage.svg" alt="">
+                <h5>John Doe</h5>
+                <p>john.doe@domain.com</p>
+                <div class="sidebar">
+                    <a class="btn-theme" asp-controller="Account" asp-action="Details"><i class="fa-regular fa-gear"></i><span>Account Details</span></a>
+                    <a class="btn-transparent" asp-controller="Authentication" asp-action="Security"><i class="fa-regular fa-lock"></i><span>Security</span></a>
+                    <a class="btn-transparent" asp-controller="Courses" asp-action="SavedCourses"><i class="fa-regular fa-bookmark"></i><span>Saved Courses</span></a>
+                    <a class="btn-transparent" asp-controller="Authentication" asp-action="SignOut"><i class="fa-regular fa-arrow-right-from-bracket"></i><span>Sign Out</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="account-forms">
+            <form method="post">
+                <h2>Security</h2>
+                <h5>Password</h5>
+
+                <div class="account-securityinfo">
+                    <div id="form-password" class="input-group">
+                        <label for="password">Current password</label>
+                        <input type="text">
+                    </div>
+                    <div id="form-newPassword" class="input-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="text">
+                    </div>
+                    <div id="form-confirm" class="input-group">
+                        <label for="confirm">Confirm new password</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="menu-buttons">
+                    <button id="form-btn-gray" class="btn-gray"><span>Cancel</span></button>
+                    <button id="form-btn-theme" class="btn-theme"><span>Change password</span></button>
+                </div>
+            </form>
+            <form method="post">
+                <hr>
+                <h5>Delete account</h5>
+                <div class="account-delete">
+                    <div id="read-terms">
+                        <p>When you delete your account, your public profile will be deactivated immediately. If you change your mind before the 14 days are up, sign in with your email and password, and we’ll send you a link to reactivate your account.</p>
+                    </div>
+                    <div id="form-accept" class="checkbox-group">
+                        <input type="checkbox">
+                        <label for="checkbox">Yes, I want to delete my account.</label>
+                    </div>
+                    <div class="menu-button">
+                        <button id="form-btn-delete" class="btn-delete"><span>Delete</span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+@await Html.PartialAsync("_ValidationScriptPartial")

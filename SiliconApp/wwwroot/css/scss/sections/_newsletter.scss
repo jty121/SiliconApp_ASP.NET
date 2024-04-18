@@ -1,0 +1,108 @@
+.newsletter {
+    background: var(--color-gray-100);
+
+    .container {
+        padding: 5rem 0 5rem;
+        width: 60%;
+
+        .content {
+
+            .heading {
+                display: flex;
+
+                @include md {
+                    img {
+                        margin-left: 2rem;
+                    }
+                }
+
+                @include lg {
+                    img {
+                        margin-left: 2rem;
+                    }
+                }
+            }
+
+            form {
+
+
+
+
+                .optionboxes {
+                    display: grid;
+
+                    @include lg {
+                        padding: 2rem 0 2rem;
+                        display: grid;
+                        grid-template-columns: auto;
+                        grid-template-areas: "headline headline headline headline" "option option option option";
+
+                        .headline {
+                            grid-area: headline;
+                        }
+                    }
+
+                    @include xl {
+                        padding: 2rem 0 2rem;
+                        display: grid;
+                        grid-template-columns: auto;
+                        grid-template-areas: "headline option option option" "headline option option option";
+
+                        .headline {
+                            grid-area: headline;
+                        }
+                    }
+
+                    .option {
+
+                        label {
+                            margin-left: 12px;
+                            @include text-s;
+
+                            &:hover {
+                                color: var(--color-theme);
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .input-subscribe {
+                margin-bottom: 1rem;
+                gap: 1rem;
+
+
+
+
+                .btn-theme {
+                    margin-top: 0.5rem;
+                    @include theme-shadow;
+                }
+
+                .email {
+                    width: 50%;
+                    border-radius: 8px;
+                    border: none;
+                    margin-top: 0.5rem;
+                    @include theme-secondary-shadow;
+                }
+
+                @include md {
+                    display: flex;
+                }
+
+                @include lg {
+                    margin-bottom: 1rem;
+                    display: flex;
+                }
+
+                @include xl {
+                    display: flex;
+                    margin-top: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}

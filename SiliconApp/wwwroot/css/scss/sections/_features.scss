@@ -1,0 +1,39 @@
+.features {
+    background: var(--color-gray-100);
+
+    .container {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+
+        .headline {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .feature-boxes {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+
+
+            @include md {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "box box";
+                gap: 3px;
+            }
+
+            @include lg {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-areas: "box box box";
+                gap: 3px;
+            }
+        }
+    }
+}

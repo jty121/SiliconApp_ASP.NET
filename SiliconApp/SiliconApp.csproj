@@ -1,0 +1,91 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+    <Content Remove="wwwroot\images\uploads\profileimage.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="wwwroot\images\brands\app-store.svg" />
+    <None Include="wwwroot\images\brands\bestseller.svg" />
+    <None Include="wwwroot\images\brands\blue.svg" />
+    <None Include="wwwroot\images\brands\color.svg" />
+    <None Include="wwwroot\images\brands\dropbox.svg" />
+    <None Include="wwwroot\images\brands\evernote.svg" />
+    <None Include="wwwroot\images\brands\google-play.svg" />
+    <None Include="wwwroot\images\brands\google.svg" />
+    <None Include="wwwroot\images\brands\list.svg" />
+    <None Include="wwwroot\images\brands\logo1.svg" />
+    <None Include="wwwroot\images\brands\logo2.svg" />
+    <None Include="wwwroot\images\brands\logo3.svg" />
+    <None Include="wwwroot\images\brands\logo4.svg" />
+    <None Include="wwwroot\images\brands\mail.svg" />
+    <None Include="wwwroot\images\brands\mailchimp.svg" />
+    <None Include="wwwroot\images\brands\reviews.svg" />
+    <None Include="wwwroot\images\brands\zoom.svg" />
+    <None Include="wwwroot\images\icons\1.svg" />
+    <None Include="wwwroot\images\icons\2.svg" />
+    <None Include="wwwroot\images\icons\3.svg" />
+    <None Include="wwwroot\images\icons\4.svg" />
+    <None Include="wwwroot\images\icons\5.svg" />
+    <None Include="wwwroot\images\icons\6.svg" />
+    <None Include="wwwroot\images\icons\bx-time-five.svg" />
+    <None Include="wwwroot\images\icons\icon-add.svg" />
+    <None Include="wwwroot\images\icons\icon-mail.svg" />
+    <None Include="wwwroot\images\icons\iconadd.svg" />
+    <None Include="wwwroot\images\icons\iconanalytics.svg" />
+    <None Include="wwwroot\images\icons\iconmessage.svg" />
+    <None Include="wwwroot\images\icons\iconnotifications.svg" />
+    <None Include="wwwroot\images\icons\iconsecurity.svg" />
+    <None Include="wwwroot\images\icons\icontasks.svg" />
+    <None Include="wwwroot\images\icons\s-btn.svg" />
+    <None Include="wwwroot\images\icons\Vector.svg" />
+    <None Include="wwwroot\images\image\404.svg" />
+    <None Include="wwwroot\images\image\albert-flores.svg" />
+    <None Include="wwwroot\images\image\albert-floresImg.svg" />
+    <None Include="wwwroot\images\image\arrows.svg" />
+    <None Include="wwwroot\images\image\courseinfo-img.svg" />
+    <None Include="wwwroot\images\image\cssdrawing_course.svg" />
+    <None Include="wwwroot\images\image\datascience_course.svg" />
+    <None Include="wwwroot\images\image\frontend_course.svg" />
+    <None Include="wwwroot\images\image\fullstack_course.svg" />
+    <None Include="wwwroot\images\image\group.svg" />
+    <None Include="wwwroot\images\image\HeaderCourses.svg" />
+    <None Include="wwwroot\images\image\html_course.svg" />
+    <None Include="wwwroot\images\image\imageapp.svg" />
+    <None Include="wwwroot\images\image\imagedashboard.svg" />
+    <None Include="wwwroot\images\image\imageshowcase.svg" />
+    <None Include="wwwroot\images\image\ios_course.svg" />
+    <None Include="wwwroot\images\image\map.svg" />
+    <None Include="wwwroot\images\image\mgame_course.svg" />
+    <None Include="wwwroot\images\image\mockup.svg" />
+    <None Include="wwwroot\images\image\pattern.svg" />
+    <None Include="wwwroot\images\image\profileimage.svg" />
+    <None Include="wwwroot\images\image\test_course.svg" />
+    <None Include="wwwroot\images\image\vgame_course.svg" />
+    <None Include="wwwroot\images\uploads\profileimage.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="8.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\SiliconWebApi\SiliconWebApi.csproj" />
+  </ItemGroup>
+
+</Project>

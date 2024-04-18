@@ -1,0 +1,39 @@
+.switchmode {
+    background: linear-gradient(90deg, var(--color-gray-900)
+    50%, white 50%); //delar upp sidan vertikalt på mitten, 90 grader hälften grå hälften vit
+    background-repeat: no-repeat;
+    width: 100%;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
+        .heading {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            @include lg {
+                display: flex;
+                padding-top: 2rem;
+            }
+
+            h1 {
+                margin-left: 2rem;
+            }
+
+            .white {
+                color: white;
+            }
+        }
+
+        img {
+            padding: 2rem 0 3rem;
+            width: 100%;
+        }
+    }
+}

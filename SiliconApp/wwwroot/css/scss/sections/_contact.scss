@@ -1,0 +1,134 @@
+
+.contact {
+    background: var(--color-gray-100);
+
+    .container {
+        padding: 2rem;
+        position: relative;
+
+
+        .info-text {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            color: var(--color-gray-600);
+
+            p {
+                @include text-s;
+                margin: 0;
+            }
+
+            a {
+                @include text-s;
+                color: var(--color-theme);
+                text-decoration: none;
+            }
+        }
+
+        h1 {
+            padding: 2rem 0 3rem 0;
+        }
+
+        .aside {
+
+            .content {
+                display: flex;
+                justify-content: start;
+                align-items: start;
+                gap: 4rem;
+
+                @include md {
+                }
+
+                @include lg {
+                    width: 35%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: start;
+                    gap: 4rem;
+                }
+
+                .content-group {
+                    padding-bottom: 3.5rem;
+
+                    h4 {
+                        font-weight: 900;
+                    }
+
+                    a {
+                        font-weight: 700;
+
+                        i {
+                            margin-left: 1rem;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-form {
+            display: flex;
+            padding: 2rem;
+
+            @include lg {
+                background: white;
+                width: 50%;
+                position: absolute;
+                top: 6rem;
+                right: 0;
+                padding: 4rem;
+                border-radius: 8px;
+                @include shadow-s;
+            }
+
+            form {
+                color: var(--color-gray-900);
+
+                span {
+                    color: var(--color-gray-600);
+                }
+
+                input {
+                    border: 1.6px solid var(--color-gray-400);
+                    border-radius: 6px;
+                    padding: 9px;
+                    color: var(--color-gray-700);
+
+                    &:after {
+                        border: 1.6px solid var(--color-gray-400);
+                    }
+                }
+
+                label {
+                    padding-top: 1rem;
+                }
+
+                #select-service {
+                    width: 100%;
+                    border: 1.6px solid var(--color-gray-400);
+                    border-radius: 6px;
+                    padding: 10px;
+
+                    &:after {
+                        border: 1.6px solid var(--color-gray-400);
+                    }
+
+                    &:focus {
+                        outline: none; //den här tar bort bordern runt när man trycker
+                    }
+                }
+            }
+
+            .btn-theme {
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    .map {
+        width: 100%;
+    }
+}

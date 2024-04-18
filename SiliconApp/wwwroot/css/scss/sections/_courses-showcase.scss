@@ -1,0 +1,112 @@
+.courses-showcase {
+    .container {
+        padding-top: 2rem;
+
+        .info-text {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+            color: var(--color-gray-600);
+
+            p {
+                @include text-s;
+                margin: 0;
+            }
+
+            a {
+                @include text-s;
+                color: var(--color-theme);
+                text-decoration: none;
+            }
+        }
+
+        .menu {
+            padding-top: 1.5rem;
+
+            .content {
+                display: grid;
+
+                @include md {
+                    display: grid;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                @include lg {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .input-menu {
+
+                    .dropdown {
+                        border: none;
+
+                        .styled {
+                            display: flex;
+                            gap: 1rem;
+
+                            @include md {
+                                justify-content: space-between;
+                            }
+
+                            input {
+                                border: 1.6px solid var(--color-gray-400);
+                                border-radius: 6px;
+                                padding: 9px;
+                                color: var(--color-gray-700);
+
+
+
+                                &:after {
+                                    border: 1.6px solid var(--color-gray-400);
+                                }
+                            }
+
+                            #select-course {
+                                border: 1.6px solid var(--color-gray-400);
+                                border-radius: 6px;
+                                padding: 10px;
+
+                                &:after {
+                                    border: 1.6px solid var(--color-gray-400);
+                                }
+
+                                &:focus {
+                                    outline: none; //den här tar bort bordern runt när man trycker
+                                }
+
+                                .categories {
+                                    color: var(--color-gray-700);
+                                }
+                            }
+
+                            .search-box {
+                                display: grid;
+
+                                span {
+                                    position: absolute;
+                                    right: 10px;
+                                    bottom: 10px;
+                                    color: var(--color-gray-800);
+                                }
+
+                                .search {
+                                    color: var(--color-gray-500);
+
+                                    &:focus {
+                                        color: black;
+                                        outline: none; //den här tar bort bordern runt när man trycker
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

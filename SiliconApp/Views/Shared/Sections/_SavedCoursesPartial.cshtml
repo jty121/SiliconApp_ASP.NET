@@ -1,0 +1,83 @@
+﻿<section class="saved-courses">
+    <div class="container">
+        <div class="aside">
+            <div class="profile">
+                <img src="~/images/image/profileimage.svg" alt="profile image">
+                <h5>John Doe</h5>
+                <p>john.doe@domain.com</p>
+                <div class="sidebar">
+                    <a class="btn-transparent" asp-controller="Account" asp-action="Details"><i class="fa-regular fa-gear"></i><span>Account Details</span></a>
+                    <a class="btn-transparent" asp-controller="Authentication" asp-action="Security"><i class="fa-regular fa-lock"></i><span>Security</span></a>
+                    <a class="btn-theme" asp-controller="Courses" asp-action="SavedCourses"><i class="fa-regular fa-bookmark"></i><span>Saved Courses</span></a>
+                    <a class="btn-transparent" asp-controller="Authentication" asp-action="SignOut"><i class="fa-regular fa-arrow-right-from-bracket"></i><span>Sign Out</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="items-saved">
+            <div class="menu">
+                <h2>Saved Items</h2>
+                <button class="btn-delete"><i class="fa-regular fa-trash"></i>Delete all</button>
+            </div>
+            <div class="content-box">
+
+                <div class="display-course" href="#">
+                    <img class="course-img" src="~/images/image/vgame_course.svg" alt="">
+                    <div class="badge">
+                        <button class="bookmarked" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="fa-solid fa-bookmark"></i></button>
+                    </div>
+                    <div class="display-info">
+                        <h5>Blender Character Creator v2.0 for Video Games Design</h5>
+                        <p>By Ralph Edwards</p>
+                        <span>$18.99</span>
+                        <hr>
+                        <div class="timeline-info">
+                            <i class="fa-light fa-clock"></i>
+                            <p>time lenght in hours</p>
+                            <i class="fa-light fa-thumbs-up"></i>
+                            <p>rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="display-course" href="#">
+                    <img class="course-img" src="~/images/image/fullstack_course.svg" alt="">
+                    <div class="badge">
+                        <button class="bookmarked" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="fa-solid fa-bookmark"></i></button>
+                    </div>
+                    <div class="display-info">
+                        <h5>Fullstack Web Developer Course from Scratch</h5>
+                        <p>By Robert Fox</p>
+                        <span>$12.50</span>
+                        <hr>
+                        <div class="timeline-info">
+                            <i class="fa-light fa-clock"></i>
+                            <p>time lenght in hours</p>
+                            <i class="fa-light fa-thumbs-up"></i>
+                            <p>rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="display-course" href="#">
+                    <img class="course-img" src="~/images/image/test_course.svg" alt="">
+                    <div class="badge">
+                        <button class="bookmarked" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><i class="fa-solid fa-bookmark"></i></button>
+                    </div>
+                    <div class="display-info">
+                        <h5>Learn JMETER from Scratch on Live Apps-Performance Testing</h5>
+                        <p>By Jenny Wilson</p>
+                        <span>$14.50</span>
+                        <hr>
+                        <div class="timeline-info">
+                            <i class="fa-light fa-clock"></i>
+                            <p>time lenght in hours</p>
+                            <i class="fa-light fa-thumbs-up"></i>
+                            <p>rating</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
