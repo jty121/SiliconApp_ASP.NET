@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using SiliconWebApp.ViewModels;
 using System.Text;
-
 namespace SiliconApp.Controllers
 {
     public class HomeController(HttpClient http) : Controller
@@ -48,13 +47,12 @@ namespace SiliconApp.Controllers
 
                     //var url = $"https://localhost:7296/api/Subscribers?email={viewModel.Email}";
                     //var request = new HttpRequestMessage(HttpMethod.Post, url);
-
                     //var response = await http.SendAsync(request);
 
                     if (response.IsSuccessStatusCode)
                     {
                         ViewData["Status"] = "Subscribed";
-                        
+
                     }
                     else if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
                     {
@@ -73,5 +71,4 @@ namespace SiliconApp.Controllers
             return View(viewModel);
         }
     }
-
 }

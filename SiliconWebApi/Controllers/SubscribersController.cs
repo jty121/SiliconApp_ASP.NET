@@ -1,14 +1,12 @@
 ﻿
 using Infrastructure.Dtos;
 using Microsoft.AspNetCore.Mvc;
-using SiliconWebApi.Attributes;
 using WebApi.Services;
 
 namespace SiliconWebApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-//[UseApiKey]
 public class SubscribersController(SubscribeService subscribeService) : ControllerBase
 {
     private readonly SubscribeService _subscribeService = subscribeService;

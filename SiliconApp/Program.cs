@@ -11,15 +11,8 @@ builder.Services.AddRouting(x => x.LowercaseUrls = true);//sökvägarna uppe i url
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataContext_WebApp>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("LocalDatabase")));
 builder.Services.AddHttpClient();
-// ROLLHANTERING MED IDENTITY                           //separera om du vill ha större tillgång istället för att enbart köra default-identity
-//builder.Services.AddIdentity<UserEntity, IdentityRole>(x =>
-//{
-//    x.User.RequireUniqueEmail = true;
-//    x.SignIn.RequireConfirmedAccount = false;
-//    x.Password.RequiredLength = 8;
-//})
-//.AddEntityFrameworkStores<DataContext>();
 
+// ROLLHANTERING MED IDENTITY                           //separera om du vill ha större tillgång istället för att enbart köra default-identity
 builder.Services.AddDefaultIdentity<UserEntity>(x =>
 {
     x.User.RequireUniqueEmail = true;
@@ -61,6 +54,7 @@ builder.Services.AddAuthentication().AddGoogle(x =>
 // DEPENDECY INJECTIONS - REGISTRERA SERVICES, REPOSITORIES
 builder.Services.AddScoped<AddressRepository>();
 builder.Services.AddScoped<AddressService>();
+builder.Services.AddScoped<AccountManager>();
 var app = builder.Build();
 
 app.UseCors(x => x.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());

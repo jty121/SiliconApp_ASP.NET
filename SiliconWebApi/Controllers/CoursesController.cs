@@ -1,5 +1,4 @@
 ﻿
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SiliconWebApi.Attributes;
 using WebApi.Services;
@@ -9,7 +8,6 @@ namespace SiliconWebApi.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [UseApiKey]
-    //[Authorize]
     public class CoursesController(CourseService courseService) : ControllerBase
     {
         private readonly CourseService _courseService = courseService;

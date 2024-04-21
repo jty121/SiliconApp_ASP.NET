@@ -15,7 +15,7 @@ public class UserEntity : IdentityUser  //ärver från identity, lägg till de d
     public string? Biography { get; set; }
 
     [ProtectedPersonalData]
-    public string? ProfileImageUrl { get; set; } //kan ha en profilbild, men behöver inte. 
+    public string? ProfileImageUrl { get; set; } = "Avatar.jpg"; //kan ha en profilbild, men behöver inte. Standard bild förvald 
     public int? AddressId { get; set; }
     public AddressEntity? Address { get; set; }
 

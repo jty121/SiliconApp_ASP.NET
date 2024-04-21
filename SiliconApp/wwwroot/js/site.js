@@ -25,11 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function handleProfileImageUpload() {
     try {
-        let fileUploader = document.getElementById('FileUploader')
+        let fileUploader = document.querySelector('#fileUploader')
 
         if (fileUploader != undefined) {
+
             fileUploader.addEventListener('change', function () {
-                if (this.files.lenght > 0) //om filen som skickas innehåller en eller flera filer
+                if (this.files.length > 0) //om filen som skickas innehåller en eller flera filer
                     this.form.submit() // då submittas formuläret
             })
         }
